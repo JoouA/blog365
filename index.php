@@ -101,18 +101,18 @@ include "Conn/conn.php";
                             <tr>
                                 <td>
                                     <table width="201px"  border="0" cellspacing="0" cellpadding="0" valign="top" style="margin-top:5px;">
+                                    <?php
+                                        $article_res = mysql_query('select * from tb_article  ORDER BY now DESC limit 0,4',$link);
+                                        $num = 1;
+                                        while ( $article = mysql_fetch_array($article_res,MYSQL_ASSOC)){?>
                                         <tr>
-                                            <td width="201" align="left" valign="top">
-                                                <?php
-                                                    $article_res = mysql_query('select * from tb_article  ORDER BY now DESC limit 0,4',$link);
-                                                    $num = 1;
-                                                    while ( $article = mysql_fetch_array($article_res,MYSQL_ASSOC)){?>
-                                                    &nbsp;&nbsp;&nbsp;<a href="#" target="_blank"><?php echo $num.'、'.substr($article['title'],0,30); $num++; ?></a><br>
-                                                <?php
-                                                    }
-                                                ?>
+                                            <td width="201px" align="left" valign="top">
+                                                    &nbsp;&nbsp;&nbsp;<a href="article.php?file_id=<?php echo $article['id']; ?>" target="_blank"><?php echo $num.'、'.substr($article['title'],0,30); $num++; ?></a>
                                             </td>
                                         </tr>
+                                        <?php
+                                            }
+                                        ?>
                                         <tr>
                                             <td height="10" align="right"><a href="file_more.php"><img src=" images/more.gif" width="27px" height="9px" border="0">&nbsp;&nbsp;&nbsp;</a></td>
                                         </tr>
@@ -134,7 +134,7 @@ include "Conn/conn.php";
                                             <tr>
                                                 <td width="9px" rowspan="2"  align="center">&nbsp;</td>
                                                      <td width="147px"  align="center">
-                                                         <a href="#" target="_blank">
+                                                         <a href="image.php?recid=<?php echo $pic['id']; ?>" target="_blank">
                                                          <img src="f_image.php?pic_id=<?php echo $pic['id'];?>"  width="120" height="75" border="0">
                                                         </a><br>
                                                     </td>
