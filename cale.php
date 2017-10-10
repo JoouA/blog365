@@ -70,9 +70,7 @@ class calendar{
 
         $fweek=$this->getWeek($this->year,$this->month,1);     //获得此月第一天为星期几
 
-        echo "<div style=width:280px; font:9;>
-        <form action=$_SERVER[PHP_SELF] method='post' style='margin:0'>
-        <select name=month onchange='this.form.submit();'>";
+        echo "<div style=width:225px; font:9pt;><form action=$_SERVER[PHP_SELF] method='post' style='margin:0'><select name=month onchange='this.form.submit();'>";
 
         for($ttmpa=1;$ttmpa<13;$ttmpa++){     //输出12个月
 
