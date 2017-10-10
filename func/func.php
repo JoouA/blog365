@@ -9,4 +9,8 @@ function get($key){
     return empty($_GET[$key] )? '': htmlspecialchars(trim($_GET[$key]));
 }
 
+function post($key){
+    return empty($_POST[$key])?'': htmlspecialchars(trim($_POST[$key]));
+}
+
 ?>
