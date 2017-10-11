@@ -11,9 +11,10 @@ $chk_sql = "select * from `tb_user` WHERE `regname`='$regname' AND `regpwd`='$re
 
 $chk_res = mysql_query($chk_sql,$link);
 $num = mysql_num_rows($chk_res);
-
+$user = mysql_fetch_array($chk_res,MYSQL_ASSOC);
 if ($num == 1){
     $_SESSION['username'] = $regname;
+    $_SESSION['fig'] = $user['fig'];
     echo "<script type='text/javascript'>alert('登录成功！');window.location.href='index.php';</script>";
     exit();
 }else{

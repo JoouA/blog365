@@ -34,7 +34,7 @@
                                                         while($info=mysql_fetch_array($article_res)){
                                                             ?>
                                                         <tr>
-                                                            <td width="201px" align="left" valign="top">
+                                                            <td width="201px" align="left" valign="middle">
                                                                 &nbsp;&nbsp;&nbsp;<a href="article.php?file_id=<?php echo $info['id']; ?>" target="_blank"><?php echo $i.'、'.$info['title'];?></a>
                                                             </td>
                                                         </tr>
