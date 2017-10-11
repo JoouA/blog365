@@ -28,7 +28,7 @@
                             <?php
                         }
                         ?>
-                        <TD style="WIDTH: 80px; COLOR: red;"><a href="safe.php">退出登录</a></TD>
+                        <TD style="WIDTH: 80px; COLOR: red;"><a href="safe.php" onclick="return exit();">退出登录</a></TD>
                     </TR>
                     </TBODY>
                 </TABLE>

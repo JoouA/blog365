@@ -28,6 +28,14 @@ include "check_login.php";
             return false;
         }
     }
+
+    function exit(){
+        if (confirm('要退出登录吗？') == true){
+            return true;
+        }else{
+            return false;
+        }
+    }
 </script>
 <body >
 <div class="menuskin" id="popmenu" onmouseover="clearhidemenu();highlightmenu(event,'on')"
