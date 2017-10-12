@@ -5,8 +5,21 @@ require_once "func/func.php";
 
 $id=get('file_id');
 
+// login user
+$username = $_SESSION['username'];
+
 $chk_sql = "select * from `tb_article` WHERE `id`='$id'";
 $chk_res = mysql_query($chk_sql,$link);
+
+$data = mysql_fetch_array($chk_res,MYSQL_ASSOC);
+
+// 保护文件 不被删除
+if ($data['author'] != $username){
+    echo "<script type='text/javascript'>alert('非法操作');window.location.href='index.php';</script>";
+    exit();
+}
+
+
 $num = mysql_num_rows($chk_res);
 
 if($num == 1){
