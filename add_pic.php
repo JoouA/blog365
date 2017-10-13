@@ -20,6 +20,21 @@
                 alert('请选择图片!');
                 return false;
             }
+
+            var pic = document.myform.file.value;
+            var place = pic.lastIndexOf('.');
+            var ext =  pic.substring(place).toLowerCase();
+
+            var extArr = new Array('.png','.jpg','.jpeg','.gif');
+
+            for(var i=0; i < extArr.length; i++){
+                if(extArr[i] == ext){
+                    return true;
+                }
+            }
+
+            alert('请选择正确的图片格式');
+            return false;
         }
     </script>
 </head>
