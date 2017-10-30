@@ -5,7 +5,7 @@ require_once "func/chk.php";
 require_once "func/func.php";
 require_once "Conn/conn.php";
 $title = post('txt_title');
-$content = $_POST['file'];
+$content = addslashes($_POST['file']);   // fix insert bug
 $now = date("Y-m-d H:m:s");
 $author = $_SESSION['username'];
 if(empty($title) || empty($content)){

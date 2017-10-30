@@ -21,10 +21,12 @@ $arrExt = array('.png','jpg','.gif','.jpeg');
 
 $is_pass = false;
 
-foreach ($arrExt as $key => $value){
+
+$is_pass = in_array($ext,$arrExt)? true : false;
+/*foreach ($arrExt as $key => $value){
     if ($value == $ext)
         $is_pass=true;
-}
+}*/
 
 $author = $_SESSION['username'];
 date_default_timezone_set('Asia/Shanghai');
@@ -39,8 +41,6 @@ if ($is_pass){
     echo "<script type='text/javascript'>alert('请上传正确的图片');window.history.back();</script>";
     exit();
 }
-
-
 
 
 echo filesize($file);
