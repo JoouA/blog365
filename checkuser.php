@@ -15,6 +15,7 @@ $user = mysql_fetch_array($chk_res,MYSQL_ASSOC);
 if ($num == 1){
     $_SESSION['username'] = $regname;
     $_SESSION['fig'] = $user['fig'];
+    setcookie('PHPSESSID',session_id(),time()+60*2);
     echo "<script type='text/javascript'>alert('登录成功！');window.location.href='index.php';</script>";
     exit();
 }else{
